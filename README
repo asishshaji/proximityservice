@@ -1,0 +1,46 @@
+https://www.youtube.com/watch?v=M4lR_Va97cQ&t=1177s
+Function Requirements
+[] Given user location, return all the businesses in a given radius
+[] Business users can add delete or update a business
+[] Users can view detailed information about the business
+
+API
+==================================================================
+GET /v1/search/nearby  {latitude, longitude, radius(default:500m)}
+{
+    "total": 12,
+    "business":[{business object}] // just give the required data, not the whole business detail
+}
+include pagination
+==================================================================
+==================================================================
+GET /v1/business/:id Return detailed information about business
+==================================================================
+POST /v1/business Add a business
+==================================================================
+PUT /v1/business Update a business
+==================================================================
+DELETE /v1/business Delete a business
+==================================================================
+
+Database Design
+==================================================================
+business, geospatial index
+==================================================================
+business
+==================================================================
+id(PK),address,city,state,country
+==================================================================
+
+geospatial_index
+==================================================================
+location, business_id
+
+Two service
+==================================================================
+Location based (/search/nearby) Business (/business/)
+
+
+
+
+
